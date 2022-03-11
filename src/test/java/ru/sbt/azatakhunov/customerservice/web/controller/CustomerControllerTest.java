@@ -70,11 +70,50 @@ class CustomerControllerTest {
         Mockito.when(customerApplicationService.registerCustomer("13", "1234567890", "test_name", "test_address"))
                 .thenReturn(customerInfo);
 
-        Response response = customerController.registerCustomer("13", customerInfoDTO);
+        Response response = customerController.registerCustomer(customerInfoDTO);
 
         Assertions.assertEquals(Response.Status.OK.getStatusCode(), response.getStatus());
-
         Assertions.assertNotNull(response);
+
+        CustomerInfo customerInfo = (CustomerInfo) response.getEntity();
+        Assertions.assertNotNull(customerInfo);
+        Assertions.assertEquals("13", customerInfo.getId(), "Response ID assertion fails");
+        Assertions.assertEquals("1234567890", customerInfo.getPw(), "Response PW assertion fails");
+        Assertions.assertEquals("test_name", customerInfo.getName(), "Response Name assertion fails");
+        Assertions.assertEquals("test_address", customerInfo.getAddress(), "Response Address assertion fails");
+        Assertions.assertNotNull(customerInfo.getRegisteredDay(), "Response Registered Day assertion fails");
+    }
+
+    @Test
+    void testCustomer_shouldWithdrawCustomer() {
+        Mockito.when(customerApplicationService.withdrawCustomer(customerInfoDTO.getId(), customerInfoDTO.getPw()))
+                .thenReturn(customerInfo);
+
+        Response response = customerController.withdrawCustomer("13", customerInfoDTO);
+
+        Assertions.assertEquals(Response.Status.OK.getStatusCode(), response.getStatus());
+        Assertions.assertNotNull(response);
+
+        CustomerInfo customerInfo = (CustomerInfo) response.getEntity();
+        Assertions.assertNotNull(customerInfo);
+        Assertions.assertEquals("13", customerInfo.getId(), "Response ID assertion fails");
+        Assertions.assertEquals("1234567890", customerInfo.getPw(), "Response PW assertion fails");
+        Assertions.assertEquals("test_name", customerInfo.getName(), "Response Name assertion fails");
+        Assertions.assertEquals("test_address", customerInfo.getAddress(), "Response Address assertion fails");
+        Assertions.assertNotNull(customerInfo.getRegisteredDay(), "Response Registered Day assertion fails");
+    }
+
+    @Test
+    void testCustomer_shouldUpdateCustomer() {
+        Mockito.when(customerApplicationService.updateCustomer(customerInfoDTO.getId(), customerInfoDTO.getPw(),
+                        customerInfoDTO.getName(), customerInfoDTO.getAddress()))
+                .thenReturn(customerInfo);
+
+        Response response = customerController.updateCustomer("13", customerInfoDTO);
+
+        Assertions.assertEquals(Response.Status.OK.getStatusCode(), response.getStatus());
+        Assertions.assertNotNull(response);
+
         CustomerInfo customerInfo = (CustomerInfo) response.getEntity();
         Assertions.assertNotNull(customerInfo);
         Assertions.assertEquals("13", customerInfo.getId(), "Response ID assertion fails");
