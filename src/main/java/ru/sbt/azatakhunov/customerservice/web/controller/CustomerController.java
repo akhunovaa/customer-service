@@ -31,7 +31,8 @@ public class CustomerController {
     @Consumes(MediaType.APPLICATION_JSON)
     @POST
     public Response registerCustomer(CustomerInfoDTO customerInfo) {
-        return Response.ok(customerApplicationService.registerCustomer(customerInfo.getId(), customerInfo.getPw(), customerInfo.getName(), customerInfo.getAddress()))
+        return Response.ok(customerApplicationService.registerCustomer(customerInfo.getId(), customerInfo.getPw(),
+                        customerInfo.getName(), customerInfo.getAddress()))
                 .build();
     }
 
@@ -47,7 +48,8 @@ public class CustomerController {
     @Path("{id}")
     @PUT
     public Response updateCustomer(String id, CustomerInfoDTO customerInfoDTO) {
-        return Response.ok(customerApplicationService.updateCustomer(id, customerInfoDTO.getPw(), customerInfoDTO.getName(), customerInfoDTO.getAddress()))
+        return Response.ok(customerApplicationService.updateCustomer(id, customerInfoDTO.getPw(),
+                        customerInfoDTO.getName(), customerInfoDTO.getAddress()))
                 .build();
     }
 }
