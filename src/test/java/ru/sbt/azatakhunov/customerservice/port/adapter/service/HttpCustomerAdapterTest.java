@@ -32,6 +32,7 @@ class HttpCustomerAdapterTest {
     void beforeEach() {
         String registeredDay = new java.text.SimpleDateFormat("yyyy-MM-dd").format(new java.util.Date());
         customerInfoDTOList = new ArrayList<>(3);
+
         customerInfoDTOList.add(CustomerInfoDTO.builder()
                 .id("13")
                 .pw("1234567890")

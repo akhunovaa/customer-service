@@ -15,7 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @QuarkusTest
-class CustomerIDServiceImplTest {
+class CustomerIDServiceTest {
 
     @InjectMock
     CustomerAdapter customerAdapter;
