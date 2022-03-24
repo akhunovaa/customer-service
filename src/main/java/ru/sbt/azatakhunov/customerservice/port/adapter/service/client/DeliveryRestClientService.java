@@ -11,9 +11,9 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import java.util.List;
 
-@Path("/customers")
+@Path("/v1/customers")
 @ApplicationScoped
-@RegisterRestClient(configKey = "delivery-api")
+@RegisterRestClient
 @RegisterClientHeaders
 public interface DeliveryRestClientService {
 
