@@ -8,11 +8,8 @@ import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 import ru.sbt.azatakhunov.customerservice.domain.CustomerInfo;
 import ru.sbt.azatakhunov.customerservice.port.adapter.persistance.CustomerProjectionRepository;
-import ru.sbt.azatakhunov.customerservice.web.controller.CustomerController;
 
 import javax.inject.Inject;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 @QuarkusTest
 class CustomerQueryServiceTest {

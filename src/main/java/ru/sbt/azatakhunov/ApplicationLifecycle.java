@@ -8,6 +8,9 @@ import javax.enterprise.event.Observes;
 
 @ApplicationScoped
 public class ApplicationLifecycle {
-    void onStart(@Observes StartupEvent event) {}
-    void onStop(@Observes ShutdownEvent event) {}
+    void onStart(@Observes StartupEvent event) {
+    }
+
+    void onStop(@Observes ShutdownEvent event) {
+    }
 }
