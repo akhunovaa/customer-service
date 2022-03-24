@@ -11,14 +11,13 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import java.util.List;
 
-@Path("/")
+@Path("/customers")
 @ApplicationScoped
 @RegisterRestClient(configKey = "delivery-api")
 @RegisterClientHeaders
 public interface DeliveryRestClientService {
 
     @GET
-    @Path("/customers")
     @Produces(MediaType.APPLICATION_JSON)
     List<CustomerInfoDTO> getAllCustomerList();
 

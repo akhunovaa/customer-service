@@ -12,14 +12,13 @@ import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 import java.util.List;
 
-@Path("/")
+@Path("/orders")
 @ApplicationScoped
 @RegisterRestClient(configKey = "orders-api")
 @RegisterClientHeaders
 public interface OrderRestClientService {
 
     @GET
-    @Path("/orders")
     @Produces(MediaType.APPLICATION_JSON)
     List<OrderInfoDTO> getTradeListByCustomerID(@QueryParam("id") String id);
 
