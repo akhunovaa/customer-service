@@ -23,7 +23,7 @@ class OrderInfoDTOTest extends DtoTest<OrderInfoDTO> {
                 .id("13")
                 .price(113)
                 .quantity(13)
-                .build();;
+                .build();
 
 
         Assertions.assertEquals(orderInfoDTO_one, orderInfoDTO_two, "Assertion of two objects fails!");

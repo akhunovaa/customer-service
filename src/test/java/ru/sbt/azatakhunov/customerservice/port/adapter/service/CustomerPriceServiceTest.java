@@ -8,7 +8,6 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 import ru.sbt.azatakhunov.customerservice.domain.CustomerPriceService;
-import ru.sbt.azatakhunov.customerservice.web.controller.dto.CustomerInfoDTO;
 import ru.sbt.azatakhunov.customerservice.web.controller.dto.OrderInfoDTO;
 
 import javax.inject.Inject;
