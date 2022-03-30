@@ -9,7 +9,7 @@ In shopping application, Bounded Context was applied to customer management (Cus
 
 ![](images/DDD.jpeg)
 
-##What is Quarkus?
+## What is Quarkus?
 
 Traditional Java stacks were engineered for monolithic applications with long startup times and large memory requirements in a world where the cloud, containers, and Kubernetes did not exist. Java frameworks needed to evolve to meet the needs of this new world.
 
@@ -27,3 +27,4 @@ mvn clean package
 java -jar target/customer-service-1.0.0-native-image-source-jar/customer-service-1.0.0-runner.jar
 ```
 
+## SONAR
