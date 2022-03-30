@@ -30,6 +30,10 @@
         <quarkus.platform.version>2.2.5.Final</quarkus.platform.version>
         <surefire-plugin.version>2.22.1</surefire-plugin.version>
         <lombok.version>1.18.22</lombok.version>
+
+        <!--SONAR-->
+        <sonar.organization>aaakhunov</sonar.organization>
+        <sonar.host.url>https://sonarcloud.io</sonar.host.url>
     </properties>
 
     <profiles>

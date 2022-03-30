@@ -2,12 +2,17 @@ package ru.sbt.azatakhunov.customerservice.domain;
 
 import lombok.Builder;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.ToString;
+import ru.sbt.azatakhunov.customerservice.common.Aggregate;
 import ru.sbt.azatakhunov.customerservice.domain.exception.PasswordNotMatchedException;
 import ru.sbt.azatakhunov.customerservice.domain.exception.PasswordTooShortException;
 
+@EqualsAndHashCode(callSuper = false)
 @Builder(toBuilder = true)
 @Data
-public class CustomerInfo {
+@ToString
+public class CustomerInfo extends Aggregate {
 
     private String id;
     private String pw;
@@ -29,5 +34,10 @@ public class CustomerInfo {
         }
 
 //        this.apply(new CustomerUpdatedEvent(this.id, pw, name, address));
+    }
+
+    @Override
+    public String getId() {
+        return id;
     }
 }
